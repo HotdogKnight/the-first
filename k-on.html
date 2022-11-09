@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 800px;
+            /* 为页面设置视距 */
+        }
+        .cube{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            /* background-color: #bfa; */
+            transform-style:preserve-3d;
+            transform: rotateX(45deg) rotateZ(45deg);
+            animation: turnSelf 15s infinite linear;
+        }
+        /* .cube:hover{
+            animation-play-state: paused;
+        } */
+
+        .cube div{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            border-radius: 10%;
+            overflow: hidden;
+            opacity: .7;  
+        }
+        .cube div:hover img{
+            box-shadow: 0 0 20px rgb(0, 0, 0,.7);
+            border-radius: 10%;
+            animation: focusImg .3s linear forwards;
+        }
+        .cube div:hover{
+            overflow: visible;
+            opacity: 1;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        .kon{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .uyi{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .mio{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .momo{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        .kazi{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .lizi{
+            transform: rotateX(0deg) translateZ(100px);
+        }
+        @keyframes turnSelf{
+            from{
+                transform:rotateX(45deg) rotateZ(45deg);
+            }
+           to{
+                transform: rotateX(405deg) rotateZ(405deg);
+            }
+        }
+        @keyframes focusImg {
+            from{
+                transform:0,0
+            }
+            to{
+                transform: scale(1.2);
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="kon">
+            <img src="./img/uyi.jpg">
+        </div>
+        <div class="uyi">
+            <img src="./img/k-on.jpg">
+        </div>
+        <div class="mio">
+            <img src="./img/mio.jpg">
+        </div>
+        <div class="momo">
+            <img src="./img/momo.jpg">
+        </div>
+        <div class="kazi">
+            <img src="./img/kazi.jpg">
+        </div>
+        <div class="lizi">
+            <img src="./img/lizi.png">
+        </div>
+    </div>
+</body>
+</html>
